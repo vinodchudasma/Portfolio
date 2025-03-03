@@ -1,22 +1,27 @@
-let calcScrollValue = ()=>{
+let calcScrollValue = () => {
     let scrollProgress = document.getElementById("progress");
     let pos = document.documentElement.scrollTop;
-
     let calcHeight = document.documentElement.scrollHeight - document.documentElement.clientHeight;
-    let scrollValue = Math.round((pos * 100)/calcHeight);
-    
-    if(pos > 100){
-        scrollProgress.style.display = "grid";
-    }else{
-        scrollProgress.style.display = "grid";
-    }
+    let scrollValue = Math.round((pos * 100) / calcHeight);
 
-    scrollProgress.addEventListener("click",()=>{
-        document.documentElement.scrollTop = 0;
-    });
+    // Ensure the element is always visible
+    scrollProgress.style.display = "grid";
 
-    scrollProgress.style.background = `conic-gradient(#fff ${scrollValue}%,#e6006d ${scrollValue}%)`;
+    // Scroll to top when clicked
+    scrollProgress.onclick = () => {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    // Update progress circle
+    scrollProgress.style.background = `conic-gradient(#e6006d ${scrollValue}%, #fff ${scrollValue}%)`;
 };
+
+// Ensure function runs on scroll
+window.addEventListener("scroll", calcScrollValue);
+
+// Call once to set the initial state
+calcScrollValue();
+
 window.onscroll = calcScrollValue;
 window.onload = calcScrollValue;
 
