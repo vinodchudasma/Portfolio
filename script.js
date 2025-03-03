@@ -8,18 +8,18 @@ let calcScrollValue = ()=>{
     if(pos > 100){
         scrollProgress.style.display = "grid";
     }else{
-        scrollProgress.style.display = "none";
+        scrollProgress.style.display = "grid";
     }
 
     scrollProgress.addEventListener("click",()=>{
         document.documentElement.scrollTop = 0;
     });
 
-    scrollProgress.style.background = conic-gradient(#fff ${scrollValue}%,#e6006d ${scrollValue}%);
+    scrollProgress.style.background = `conic-gradient(#fff ${scrollValue}%,#e6006d ${scrollValue}%)`;
 };
-
 window.onscroll = calcScrollValue;
 window.onload = calcScrollValue;
+
 // active hamburger menu 
 let menuIcon = document.querySelector(".menu-icon");
 let navlist = document.querySelector(".navlist")

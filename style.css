@@ -977,34 +977,32 @@ footer{
     place-items: center;
     font-size: 25px;
 } */
-#progress{
+#progress {
     position: fixed;
-    /* background: #194eb9; */
     z-index: 1000;
-    bottom: 60px;
-    right: 10px;
-    width: 50px;
-    height: 50px;
-    display: none;
+    bottom: 20px; /* Reduced bottom space for better mobile fit */
+    right: 20px;  /* Adjusted right spacing */
+    width: 45px;  /* Slightly smaller for mobile screens */
+    height: 45px;
+    display: grid;
     place-items: center;
     border-radius: 50%;
     color: #1d002c;
     cursor: pointer;
-    box-shadow: rgba(50,50,93,0.25)0px 50px 100px -20px,
-    rgba(0,0,0,0.3)0px 30px 60px -30px,
-    rgba(10,37,64,0.35)0px -2px 6px 0px inset;
+    box-shadow: rgba(50,50,93,0.25) 0px 20px 30px -10px,
+                rgba(0,0,0,0.3) 0px 10px 15px -10px,
+                rgba(10,37,64,0.35) 0px -2px 6px 0px inset;
 }
 
-
-#progress-value{
+#progress-value {
     display: grid;
-    height: calc(100% - 12px);
-    width: calc(100% - 12px);
+    height: calc(100% - 10px);
+    width: calc(100% - 10px);
     background: var(--gradient-color-bg);
     border-radius: 50%;
     color: #fff;
     place-items: center;
-    font-size: 25px;
+    font-size: 20px; /* Reduced size */
 }
 
 
